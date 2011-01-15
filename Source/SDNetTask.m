@@ -128,9 +128,6 @@
 			
 			break;
 		}
-		case SDParseFormatImage:
-			results = [[NSImage alloc] initWithData:data];
-			break;
 		case SDParseFormatNone:
 			results = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 			break;
@@ -308,14 +305,7 @@
 		// call -appendData:. also, when would we even have only NSData? come to think of it,
 		// we might as well just delete this whole block, comments and all.
 		//		}
-		else if ([object isKindOfClass:[NSImage class]]) {
-			NSBitmapImageRep *rep = [[[NSBitmapImageRep alloc] initWithData:[object TIFFRepresentation]] autorelease];
-			NSData *imageData = [rep representationUsingType:NSPNGFileType properties:nil];
-			
-			[self _appendToData:postBody formatWithUTF8:@"Content-Disposition: form-data; name=\"%@\"; filename=\"astyle.png\"\r\n", key];
-			[self _appendToData:postBody formatWithUTF8:@"Content-Type: image/png\r\n\r\n"];
-			[postBody appendData:imageData];
-		}
+		
 	}
 	
 	[postBody appendData:stringBoundaryFinalData];

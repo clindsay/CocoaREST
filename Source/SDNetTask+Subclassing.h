@@ -6,13 +6,12 @@
 //  Copyright 2009 Thoughtful Tree Software. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+
 
 #import "SDNetTask.h"
 
 #import "NSData+Base64.h"
 #import "NSString+UUID.h"
-#import "NSColor+Hex.h"
 
 // the rationale for not putting much of this info into SDNetTask.h is that it's not
 // particularly useful or relevant to users of this library, only for subclassers.

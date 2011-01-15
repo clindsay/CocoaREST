@@ -6,7 +6,7 @@
 //  Copyright 2009 Thoughtful Tree Software. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+
 
 #import "SDNetTaskManager.h"
 #import "SDFacebookTask.h"
